@@ -19,3 +19,14 @@ imprimir("entre com um numero")
 a = es.leitura("*n")
 imprimir(fact(a))
 ```
+
+## Instalação
+
+Para instalar o Flua na sua máquina, basta executar os comandos abaixo:
+
+```
+git clone https://github.com/tomashugo/flua.git
+cd flua
+sudo make
+sudo make install
+```

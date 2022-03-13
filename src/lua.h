@@ -16,17 +16,17 @@
 #include "luaconf.h"
 
 
-#define LUA_VERSION_MAJOR	"5"
-#define LUA_VERSION_MINOR	"4"
-#define LUA_VERSION_RELEASE	"4"
+#define LUA_VERSION_MAJOR	"0"
+#define LUA_VERSION_MINOR	"0"
+#define LUA_VERSION_RELEASE	"1"
 
-#define LUA_VERSION_NUM			504
+#define LUA_VERSION_NUM			001
 #define LUA_VERSION_RELEASE_NUM		(LUA_VERSION_NUM * 100 + 4)
 
-#define LUA_VERSION	"Lua " LUA_VERSION_MAJOR "." LUA_VERSION_MINOR
+#define LUA_VERSION	"Flua " LUA_VERSION_MAJOR "." LUA_VERSION_MINOR
 #define LUA_RELEASE	LUA_VERSION "." LUA_VERSION_RELEASE
-#define LUA_COPYRIGHT	LUA_RELEASE "  Copyright (C) 1994-2022 Lua.org, PUC-Rio"
-#define LUA_AUTHORS	"R. Ierusalimschy, L. H. de Figueiredo, W. Celes"
+#define LUA_COPYRIGHT	LUA_RELEASE "  Copyright (C) 2022 Tomás H. R. M. de Almeida"
+#define LUA_AUTHORS	"Tomás H. R. M. de Almeida"
 
 
 /* mark for precompiled code ('<esc>Lua') */
