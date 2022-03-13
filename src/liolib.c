@@ -737,6 +737,7 @@ static int f_flush (lua_State *L) {
 
 /*
 ** functions for 'io' library
+** funções para a biblioteca de entrada e saída
 */
 static const luaL_Reg iolib[] = {
   {"close", io_close},
@@ -746,7 +747,7 @@ static const luaL_Reg iolib[] = {
   {"open", io_open},
   {"output", io_output},
   {"popen", io_popen},
-  {"read", io_read},
+  {"leitura", io_read},
   {"tmpfile", io_tmpfile},
   {"type", io_type},
   {"write", io_write},
@@ -758,7 +759,7 @@ static const luaL_Reg iolib[] = {
 ** methods for file handles
 */
 static const luaL_Reg meth[] = {
-  {"leitura", f_read},
+  {"read", f_read},
   {"write", f_write},
   {"lines", f_lines},
   {"flush", f_flush},
