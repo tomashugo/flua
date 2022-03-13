@@ -1,6 +1,21 @@
+# Flua - Um fork da Linguagem Lua
 
-This is Lua 5.4.4, released on 13 Jan 2022.
+A motivação deste fork é criar uma linguagem de programação que utilize palavras reservadas em português e que tenha por trás o poder e robustez da linguagem Lua.
+Um outro grande motivo para este fork é poder estudar e entender melhor esta poderosa linguagem de programação.
 
-For installation instructions, license details, and
-further information about Lua, see doc/readme.html.
+Algo como o código abaixo já é possível fazer com a linguagem Flua.
 
+```
+-- define uma função fatorial
+funcao fact(n)
+  se n == 0 entao
+     retorna 1
+  senao
+     retorna n * fact(n-1)
+  fim
+fim
+
+imprimir("entre com um numero")
+a = es.leitura("*n")
+imprimir(fact(a))
+```
