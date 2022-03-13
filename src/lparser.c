@@ -1078,7 +1078,7 @@ static void funcargs (LexState *ls, expdesc *f, int line) {
 
 static void primaryexp (LexState *ls, expdesc *v) {
   /* primaryexp -> NAME | '(' expr ')' */
-  switch (ls->t.token) {
+  switch (ls->t.token) {    
     case '(': {
       int line = ls->linenumber;
       luaX_next(ls);

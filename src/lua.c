@@ -22,7 +22,7 @@
 
 
 #if !defined(LUA_PROGNAME)
-#define LUA_PROGNAME		"lua"
+#define LUA_PROGNAME		"flua"
 #endif
 
 #if !defined(LUA_INIT_VAR)
@@ -510,7 +510,7 @@ static int pushline (lua_State *L, int firstline) {
 */
 static int addreturn (lua_State *L) {
   const char *line = lua_tostring(L, -1);  /* original line */
-  const char *retline = lua_pushfstring(L, "return %s;", line);
+  const char *retline = lua_pushfstring(L, "retorna %s;", line);
   int status = luaL_loadbuffer(L, retline, strlen(retline), "=stdin");
   if (status == LUA_OK) {
     lua_remove(L, -2);  /* remove modified line */
