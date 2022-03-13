@@ -20,7 +20,7 @@
 #include "ldo.h"
 #include "lfunc.h"
 #include "lgc.h"
-#include "llex.h"
+#include "lexer/llex.h"
 #include "lmem.h"
 #include "lstate.h"
 #include "lstring.h"

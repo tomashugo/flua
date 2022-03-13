@@ -24,7 +24,7 @@
 #include "lmem.h"
 #include "lobject.h"
 #include "lopcodes.h"
-#include "lparser.h"
+#include "parser/lparser.h"
 #include "lstate.h"
 #include "lstring.h"
 #include "ltable.h"
