@@ -7,7 +7,7 @@ Um outro grande motivo para este fork é poder estudar e entender melhor esta po
 
 Para instalar o Flua na sua máquina, basta executar os comandos abaixo:
 
-```
+```bash
 git clone https://github.com/tomashugo/flua.git
 cd flua
 sudo make
@@ -22,7 +22,8 @@ Começando com uma linha de código:
 imprimir "Olá, mundo"
 ```
 
-Algo como o código abaixo já é possível fazer com a linguagem Flua.
+
+Se quiser tentar algo mais complexo, o código abaixo já é possível fazer com a linguagem Flua.
 
 ```Lua
 -- define uma função fatorial

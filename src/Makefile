@@ -145,7 +145,7 @@ SunOS solaris:
 
 # Compiler modules may use special flags.
 llex.o:
-	$(CC) $(CFLAGS) $(CMCFLAGS) -c llex.c
+	$(CC) $(CFLAGS) $(CMCFLAGS) -c lexer/llex.c
 
 lparser.o:
 	$(CC) $(CFLAGS) $(CMCFLAGS) -c lparser.c
@@ -180,7 +180,7 @@ lgc.o: lgc.c lprefix.h lua.h luaconf.h ldebug.h lstate.h lobject.h \
  llimits.h ltm.h lzio.h lmem.h ldo.h lfunc.h lgc.h lstring.h ltable.h
 linit.o: linit.c lprefix.h lua.h luaconf.h lualib.h lauxlib.h
 liolib.o: liolib.c lprefix.h lua.h luaconf.h lauxlib.h lualib.h
-llex.o: llex.c lprefix.h lua.h luaconf.h lctype.h llimits.h ldebug.h \
+llex.o: lexer/llex.c lprefix.h lua.h luaconf.h lctype.h llimits.h ldebug.h \
  lstate.h lobject.h ltm.h lzio.h lmem.h ldo.h lgc.h llex.h lparser.h \
  lstring.h ltable.h
 lmathlib.o: lmathlib.c lprefix.h lua.h luaconf.h lauxlib.h lualib.h

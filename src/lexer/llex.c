@@ -7,25 +7,25 @@
 #define llex_c
 #define LUA_CORE
 
-#include "lprefix.h"
+#include "../lprefix.h"
 
 
 #include <locale.h>
 #include <string.h>
 
-#include "lua.h"
+#include "../lua.h"
 
-#include "lctype.h"
-#include "ldebug.h"
-#include "ldo.h"
-#include "lgc.h"
-#include "llex.h"
-#include "lobject.h"
-#include "lparser.h"
-#include "lstate.h"
-#include "lstring.h"
-#include "ltable.h"
-#include "lzio.h"
+#include "../lctype.h"
+#include "../ldebug.h"
+#include "../ldo.h"
+#include "../lgc.h"
+#include "../llex.h"
+#include "../lobject.h"
+#include "../lparser.h"
+#include "../lstate.h"
+#include "../lstring.h"
+#include "../ltable.h"
+#include "../lzio.h"
 
 
 
@@ -40,7 +40,7 @@
 static const char *const luaX_tokens [] = {
     "e", "parar", "faca", "senao", "senaose",
     "fim", "falso", "para", "funcao", "irpara", "se",
-    "em", "local", "nil", "nao", "ou", "repetir",
+    "em", "local", "nulo", "nao", "ou", "repetir",
     "retorna", "entao", "verdadeiro", "ate", "enquanto",
     "//", "..", "...", "==", ">=", "<=", "~=",
     "<<", ">>", "::", "<eof>",
