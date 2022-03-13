@@ -1,3 +1,4 @@
 doc/
 src/flua
 src/fluac
+src/*.o

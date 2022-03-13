@@ -262,7 +262,7 @@ static void opencheck (lua_State *L, const char *fname, const char *mode) {
   LStream *p = newfile(L);
   p->f = fopen(fname, mode);
   if (l_unlikely(p->f == NULL))
-    luaL_error(L, "cannot open file '%s' (%s)", fname, strerror(errno));
+    luaL_error(L, "não foi possível abrir o arquivo '%s' (%s)", fname, strerror(errno));
 }
 
 
@@ -271,7 +271,7 @@ static int io_open (lua_State *L) {
   const char *mode = luaL_optstring(L, 2, "r");
   LStream *p = newfile(L);
   const char *md = mode;  /* to traverse/check mode */
-  luaL_argcheck(L, l_checkmode(md), 2, "invalid mode");
+  luaL_argcheck(L, l_checkmode(md), 2, "modo inválido");
   p->f = fopen(filename, mode);
   return (p->f == NULL) ? luaL_fileresult(L, 0, filename) : 1;
 }
@@ -291,7 +291,7 @@ static int io_popen (lua_State *L) {
   const char *filename = luaL_checkstring(L, 1);
   const char *mode = luaL_optstring(L, 2, "r");
   LStream *p = newprefile(L);
-  luaL_argcheck(L, l_checkmodep(mode), 2, "invalid mode");
+  luaL_argcheck(L, l_checkmodep(mode), 2, "modo inválido");
   p->f = l_popen(L, filename, mode);
   p->closef = &io_pclose;
   return (p->f == NULL) ? luaL_fileresult(L, 0, filename) : 1;
@@ -758,7 +758,7 @@ static const luaL_Reg iolib[] = {
 ** methods for file handles
 */
 static const luaL_Reg meth[] = {
-  {"read", f_read},
+  {"leitura", f_read},
   {"write", f_write},
   {"lines", f_lines},
   {"flush", f_flush},
