@@ -67,7 +67,7 @@ static void expr (LexState *ls, expdesc *v);
 
 static l_noret error_expected (LexState *ls, int token) {
   luaX_syntaxerror(ls,
-      luaO_pushfstring(ls->L, "%s expected", luaX_token2str(ls, token)));
+      luaO_pushfstring(ls->L, "%s esperado", luaX_token2str(ls, token)));
 }
 
 
@@ -133,7 +133,7 @@ static void check_match (LexState *ls, int what, int who, int where) {
       error_expected(ls, what);  /* do not need a complex message */
     else {
       luaX_syntaxerror(ls, luaO_pushfstring(ls->L,
-             "%s expected (to close %s at line %d)",
+             "%s esperado (to close %s at line %d)",
               luaX_token2str(ls, what), luaX_token2str(ls, who), where));
     }
   }
@@ -299,7 +299,7 @@ static void check_readonly (LexState *ls, expdesc *e) {
   }
   if (varname) {
     const char *msg = luaO_pushfstring(ls->L,
-       "attempt to assign to const variable '%s'", getstr(varname));
+       "tentativa de atribuir valor a uma variável constante '%s'", getstr(varname));
     luaK_semerror(ls, msg);  /* error */
   }
 }
@@ -974,7 +974,7 @@ static void parlist (LexState *ls) {
           isvararg = 1;
           break;
         }
-        default: luaX_syntaxerror(ls, "<name> or '...' expected");
+        default: luaX_syntaxerror(ls, "<name> ou '...' esperado");
       }
     } while (!isvararg && testnext(ls, ','));
   }
@@ -1092,7 +1092,7 @@ static void primaryexp (LexState *ls, expdesc *v) {
       return;
     }
     default: {
-      luaX_syntaxerror(ls, "unexpected symbol");
+      luaX_syntaxerror(ls, "símbolo inesperado");
     }
   }
 }
@@ -1373,7 +1373,7 @@ static void check_conflict (LexState *ls, struct LHS_assign *lh, expdesc *v) {
 */
 static void restassign (LexState *ls, struct LHS_assign *lh, int nvars) {
   expdesc e;
-  check_condition(ls, vkisvar(lh->v.k), "syntax error");
+  check_condition(ls, vkisvar(lh->v.k), "erro de sintaxe");
   check_readonly(ls, &lh->v);
   if (testnext(ls, ',')) {  /* restassign -> ',' suffixedexp restassign */
     struct LHS_assign nv;
@@ -1627,7 +1627,7 @@ static void forstat (LexState *ls, int line) {
   switch (ls->t.token) {
     case '=': fornum(ls, varname, line); break;
     case ',': case TK_IN: forlist(ls, varname); break;
-    default: luaX_syntaxerror(ls, "'=' or 'in' expected");
+    default: luaX_syntaxerror(ls, "'=' ou 'em' esperado");
   }
   check_match(ls, TK_END, TK_FOR, line);
   leaveblock(fs);  /* loop scope ('break' jumps to this point) */
@@ -1708,7 +1708,7 @@ static int getlocalattribute (LexState *ls) {
       return RDKTOCLOSE;  /* to-be-closed variable */
     else
       luaK_semerror(ls,
-        luaO_pushfstring(ls->L, "unknown attribute '%s'", attr));
+        luaO_pushfstring(ls->L, "atributo desconhecido '%s'", attr));
   }
   return VDKREG;  /* regular variable */
 }
@@ -1802,7 +1802,7 @@ static void exprstat (LexState *ls) {
   }
   else {  /* stat -> func */
     Instruction *inst;
-    check_condition(ls, v.v.k == VCALL, "syntax error");
+    check_condition(ls, v.v.k == VCALL, "erro de sintaxe");
     inst = &getinstruction(fs, &v.v);
     SETARG_C(*inst, 1);  /* call statement uses no results */
   }
